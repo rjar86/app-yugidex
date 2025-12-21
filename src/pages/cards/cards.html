@@ -1,0 +1,74 @@
+<div class="flex flex-col sm:flex-row gap-4 mb-6">
+  <input
+    type="text"
+    placeholder="Buscar carta..."
+    class="w-full sm:w-72 px-3 py-2 rounded-md bg-surface-main text-text-main border border-black/10 dark:border-white/10 focus:outline-none focus:ring-2 focus:ring-primary-main"
+    (input)="onSearch($any($event.target).value)"
+  />
+</div>
+
+@if (loading) {
+<div
+  class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6"
+>
+  @for (i of [1,2,3,4,5,6,7,8,9,10]; track i) {
+  <div class="relative rounded-xl overflow-hidden shadow-sm">
+    <img
+      src="https://images.ygoprodeck.com/images/cards/back.jpg"
+      alt=""
+      class="w-full aspect-2/3 object-cover opacity-90"
+    />
+    <!-- overlay shimmer -->
+    <div
+      class="absolute inset-0 bg-black/10 dark:bg-white/10 animate-pulse"
+    ></div>
+  </div>
+  }
+</div>
+
+} @else {
+
+<div
+  class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6"
+>
+  @for (card of pagedCards; track card.id) {
+  <a
+    [routerLink]="['/card', card.id]"
+    class="bg-card-bg text-card-text rounded-xl p-3 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
+  >
+    <img
+      [src]="card.card_images[0].image_url_small"
+      [alt]="card.name"
+      loading="eager"
+      class="w-full aspect-2/3 object-cover rounded-md mb-2"
+    />
+
+    <p class="text-xs font-semibold truncate">{{ card.name }}</p>
+  </a>
+  }
+</div>
+
+<!-- PAGINACIÓN -->
+<div class="flex justify-center items-center gap-6 mt-8">
+  <button
+    class="px-4 py-2 rounded-md bg-card-bg text-card-text disabled:opacity-40"
+    (click)="prevPage()"
+    [disabled]="page === 1"
+  >
+    Anterior
+  </button>
+
+  <span class="text-sm opacity-70">
+    Página {{ page }} de {{ totalPages }}
+  </span>
+
+  <button
+    class="px-4 py-2 rounded-md bg-card-bg text-card-text disabled:opacity-40"
+    (click)="nextPage()"
+    [disabled]="page === totalPages"
+  >
+    Siguiente
+  </button>
+</div>
+
+}
