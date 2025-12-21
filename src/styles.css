@@ -1,1 +1,184 @@
-/* You can add global styles to this file, and also import other style files */
+@import "tailwindcss";
+
+/* =========================
+   DARK VARIANT
+   ========================= */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* =========================
+   TOKENS → TAILWIND
+   ========================= */
+@theme {
+  --color-navbar-bg: var(--app-navbar-bg);
+  --color-navbar-text: var(--app-navbar-text);
+
+  --color-footer-bg: var(--app-footer-bg);
+  --color-footer-text: var(--app-footer-text);
+
+  --color-content-bg: var(--app-content-bg);
+  --color-content-text: var(--app-content-text);
+
+  --color-card-bg: var(--app-card-bg);
+  --color-card-text: var(--app-card-text);
+}
+
+/* ======================================================
+   DEFAULT (neutral – carta Yu-Gi-Oh)
+   ====================================================== */
+:root {
+  --app-navbar-bg: #111827;
+  --app-navbar-text: #f9fafb;
+
+  --app-footer-bg: #111827;
+  --app-footer-text: #9ca3af;
+
+  --app-content-bg: #f3f4f6;
+  --app-content-text: #111827;
+
+  --app-card-bg: #ffffff;
+  --app-card-text: #111827;
+
+  color-scheme: light;
+}
+
+/* ======================================================
+   LIGHT MODE
+   ====================================================== */
+
+/* 🟣 YUGI */
+:root[data-theme="yugi"] {
+  --app-navbar-bg: #7c3aed; /* morado claro */
+  --app-navbar-text: #f5f3ff;
+
+  --app-footer-bg: #7c3aed;
+  --app-footer-text: #ede9fe;
+
+  --app-content-bg: #e5e7eb; /* gris suave */
+  --app-content-text: #111827;
+
+  --app-card-bg: #dcfce7; /* verde claro */
+  --app-card-text: #064e3b;
+}
+
+/* ⚪ KAIBA */
+:root[data-theme="kaiba"] {
+  --app-navbar-bg: #ffffff;
+  --app-navbar-text: #020617;
+
+  --app-footer-bg: #ffffff;
+  --app-footer-text: #475569;
+
+  --app-content-bg: #e5e7eb; /* plateado */
+  --app-content-text: #020617;
+
+  --app-card-bg: #e0f2fe; /* azul claro */
+  --app-card-text: #075985;
+}
+
+/* 🔴 ATEM */
+:root[data-theme="atem"] {
+  --app-navbar-bg: #b91c1c; /* rojo */
+  --app-navbar-text: #fef2f2;
+
+  --app-footer-bg: #1e3a8a; /* azul */
+  --app-footer-text: #dbeafe;
+
+  --app-content-bg: #e5e7eb; /* gris suave */
+  --app-content-text: #111827;
+
+  --app-card-bg: #facc15; /* dorado */
+  --app-card-text: #422006;
+}
+
+/* ======================================================
+   DARK MODE
+   ====================================================== */
+
+/* 🟣 YUGI */
+.dark[data-theme="yugi"] {
+  --app-navbar-bg: #4c1d95; /* morado oscuro */
+  --app-navbar-text: #ede9fe;
+
+  --app-footer-bg: #4c1d95;
+  --app-footer-text: #ddd6fe;
+
+  --app-content-bg: #1f2933; /* gris oscuro */
+  --app-content-text: #e5e7eb;
+
+  --app-card-bg: #14532d; /* verde oscuro */
+  --app-card-text: #dcfce7;
+
+  color-scheme: dark;
+}
+
+/* ⚪ KAIBA */
+.dark[data-theme="kaiba"] {
+  --app-navbar-bg: #0c4a6e; /* azul oscuro */
+  --app-navbar-text: #e0f2fe;
+
+  --app-footer-bg: #0c4a6e;
+  --app-footer-text: #bae6fd;
+
+  --app-content-bg: #334155; /* plateado oscuro */
+  --app-content-text: #e5e7eb;
+
+  --app-card-bg: #ffffff; /* blanco */
+  --app-card-text: #020617;
+
+  color-scheme: dark;
+}
+
+/* 🔴 ATEM */
+.dark[data-theme="atem"] {
+  --app-navbar-bg: #7f1d1d; /* rojo oscuro */
+  --app-navbar-text: #fee2e2;
+
+  --app-footer-bg: #1e3a8a; /* azul oscuro */
+  --app-footer-text: #dbeafe;
+
+  --app-content-bg: #1f2933; /* gris oscuro */
+  --app-content-text: #e5e7eb;
+
+  --app-card-bg: #d6b98c; /* arena */
+  --app-card-text: #422006;
+
+  color-scheme: dark;
+}
+
+/* ======================================================
+   BODY
+   ====================================================== */
+body {
+  background-color: var(--app-content-bg);
+  color: var(--app-content-text);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* =========================
+   TRANSICIONES GLOBALES
+   ========================= */
+:root,
+:root[data-theme],
+.dark,
+.dark[data-theme] {
+  transition: --app-navbar-bg 300ms ease, --app-navbar-text 300ms ease,
+    --app-footer-bg 300ms ease, --app-footer-text 300ms ease,
+    --app-content-bg 300ms ease, --app-content-text 300ms ease,
+    --app-card-bg 300ms ease, --app-card-text 300ms ease;
+}
+
+/* Fallback visual */
+body,
+header,
+main,
+footer {
+  transition: background-color 300ms ease, color 300ms ease,
+    border-color 300ms ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+    animation: none !important;
+  }
+}
