@@ -60,10 +60,6 @@ https://yugiodex.netlify.app/
 
 - http://localhost:4200
 
-## Demo
-
-- https://yugiodex.netlify.app/
-
 ## Estructura del proyecto (resumen)
 
 - .
