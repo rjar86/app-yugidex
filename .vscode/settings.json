@@ -1,9 +1,37 @@
 {
-  "angular-schematics.schematicsDefaultOptions": {
-    "angular-*": {
-      "externalTemplate": true,
-      "inlineStyle": true,
-      "skipStyle": true
-    }
-  }
+    "angular-schematics.schematicsDefaultOptions": {
+        "angular-*": {
+            "externalTemplate": true,
+            "inlineStyle": true
+        }
+    },
+    "css.lint.unknownAtRules": "ignore",
+     "background.editor": {
+    "useFront": true,
+    "style": {
+      "background-position": "100% 100%",
+      "background-size": "cover",
+      "opacity": 0.2
+    },
+    "styles": [{}, {}, {}],
+    // Local images can be dragged into the browser to quickly get the file protocol address from the address bar
+    "images": ["file:///C:/Users/kane_/OneDrive/Pictures/imagenes_prueba/dmg.jpg"],
+    "interval": 0,
+    "random": false
+  },
+  // `sidebar` and `panel` have the same config as `fullscreen`
+  "background.sidebar": {
+    "images": ["file:///C:/Users/kane_/OneDrive/Pictures/Mis_waifus/434636914_390010120456123_7880245698788654721_n.jpg"],
+    "opacity": 0.3,
+    "size": "auto",
+    "interval":0,
+    "random": false
+  },
+  "background.panel": {
+    "images": ["file:///C:/Users/kane_/OneDrive/Pictures/imagenes_prueba/yugioh-background-ujmh8ikn3d9dmsyl.jpg"],
+    "opacity": 0.1,
+    "size": "cover",
+    "interval":0,
+    "random": false
+  },
 }

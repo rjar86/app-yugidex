@@ -1,59 +1,131 @@
-# AppYugidex
+🃏 YugiDex — Yu-Gi-Oh! Card Explorer
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.0.0.
+YugiDex es una aplicación web moderna para explorar cartas de Yu-Gi-Oh!, construida con Angular 21, Tailwind CSS v4 y la API oficial de YGOPRODeck.
+Permite buscar, filtrar y visualizar cartas con un diseño inspirado en productos reales, incluyendo vista de detalle, cartas relacionadas y soporte para modo claro / oscuro.
 
-## Development server
+✨ Características principales
+🔍 Búsqueda de cartas en tiempo real
+📄 Listado paginado con skeleton loading
+🃏 Detalle de carta con información completa
+🔗 Cartas relacionadas por arquetipo, tipo y raza
+🌗 Modo claro / oscuro persistente
+🎨 Theming dinámico (Yugi, Kaiba, Atem)
+⚡ Skeleton loaders para mejor UX
+📱 Diseño responsive (mobile-first)
+🧠 Tecnologías utilizadas
 
-To start a local development server, run:
+Angular 20 (standalone components)
+TypeScript
+Tailwind CSS v4
+YGOPRODeck API
+Lucide Icons
+RxJS
+LocalStorage (persistencia de tema)
 
-```bash
+🚀 Demo
+
+👉 https://yugiodex.netlify.app/
+
+📸 Screenshots
+
+## 📸 Screenshots
+
+### Listado de cartas
+
+![Listado de cartas](screenshots/cards-list.png)
+
+### Detalle de carta
+
+![Detalle de carta](screenshots/card-detail.png)
+
+### Modo oscuro
+
+![Modo oscuro](screenshots/dark-mode.png)
+
+🛠️ Instalación y uso local
+
+1️⃣ Clonar el repositorio
+git clone https://github.com/tu-usuario/yugidex.git
+cd yugidex
+
+2️⃣ Instalar dependencias
+npm install
+
+3️⃣ Ejecutar en desarrollo
 ng serve
-```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Abrir en el navegador:
+http://localhost:4200
 
-## Code scaffolding
+🗂️ Estructura del proyecto (resumen)
+.
+├─ screenshots/ # Capturas usadas en el README
+│
+├─ src/
+│ ├─ app/
+│ │ ├─ core/
+│ │ │ ├─ models/ # Modelos de dominio (YugiohCard, etc.)
+│ │ │ ├─ service/ # Servicios base / API
+│ │ │ └─ theme/ # Configuración y lógica de temas
+│ │ │
+│ │ ├─ layout/
+│ │ │ ├─ navbar/ # Navbar principal
+│ │ │ ├─ footer/ # Footer
+│ │ │ ├─ layout.html # Layout base
+│ │ │ └─ layout.ts
+│ │ │
+│ │ ├─ pages/
+│ │ │ ├─ cards/ # Listado de cartas
+│ │ │ └─ cards-detail/# Detalle de carta
+│ │ │
+│ │ └─ index.html
+│ │
+│ ├─ main.ts
+│ └─ styles.css # Tailwind CSS v4 + tokens de tema
+│
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+🔗 API utilizada
 
-```bash
-ng generate component component-name
-```
+YGOPRODeck API
+https://ygoprodeck.com/api-guide/
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+Ejemplo de endpoint usado:
 
-```bash
-ng generate --help
-```
+https://db.ygoprodeck.com/api/v7/cardinfo.php
 
-## Building
+🎨 Sistema de temas
 
-To build the project run:
+La app incluye un sistema de temas dinámico:
 
-```bash
-ng build
-```
+Default
+Yugi
+Kaiba
+Atem
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+Cada tema controla:
+Navbar
+Cards
+Fondo
+Colores en light / dark
 
-## Running unit tests
+El estado del tema y del modo oscuro se guarda en localStorage.
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+📌 Estado del proyecto
 
-```bash
-ng test
-```
+✅ Funcional
+🛠️ En mejora continua
+🚀 Pensado como demo profesional / portfolio
 
-## Running end-to-end tests
+📄 Licencia
 
-For end-to-end (e2e) testing, run:
+Este proyecto es solo con fines educativos y demostrativos.
+Yu-Gi-Oh! y sus imágenes pertenecen a Konami.
 
-```bash
-ng e2e
-```
+👤 Autor
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+Ricardo Aguilar
+Fullstack Developer
 
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+🌐 Portfolio: https://rjarportafolio.netlify.app/
+💼 LinkedIn: https://www.linkedin.com/in/ingrjar86/
+🐙 GitHub: https://github.com/rjar86
